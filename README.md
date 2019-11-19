@@ -2,6 +2,10 @@
 
 Docker with nginx web server and s6 overlay already setup to run website.
 
+## Configuration
+
+All nginx configuration files are copied into `/config` on first container start.
+
 ## Install
 
 - Mount `/config` folder (nginx configuration directory).
