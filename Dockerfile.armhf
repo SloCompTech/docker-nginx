@@ -2,7 +2,7 @@
 #	Base image
 #	@see https://github.com/SloCompTech/docker-baseimage	
 #
-FROM slocomptech/bi-nginx:1.16.1
+FROM slocomptech/bi-nginx:1.16.1-armhf
 
 #
 #	Arguments
