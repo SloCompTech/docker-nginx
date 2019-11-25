@@ -34,10 +34,10 @@ LABEL maintainer="martin.dagarin@gmail.com" \
 COPY root/ /
 
 #
-# Move nginx webroot into /data
+# Move nginx webroot into /app
 # Move config into /config
 #
 RUN cp -r /etc/nginx/* /defaults && \
-	sed -i 's/\/usr\/share\/nginx\/html/\/data/g' /defaults/conf.d/default.conf && \
+	sed -i 's/\/usr\/share\/nginx\/html/\/app/g' /defaults/conf.d/default.conf && \
 	sed -i 's/\/etc\/nginx/\/config/g' /defaults/nginx.conf && \
 	sed -i 's/\/var\/run/\/tmp/g' /defaults/nginx.conf

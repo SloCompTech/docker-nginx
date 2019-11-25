@@ -9,7 +9,7 @@ All nginx configuration files are copied into `/config` on first container start
 ## Install
 
 - Mount `/config` folder (nginx configuration directory).
-- Mount `/data` to **webroot** folder or put in webfiles during build.
+- Mount `/app` to **webroot** folder or put in webfiles during build.
 
 ## Parameters
 
