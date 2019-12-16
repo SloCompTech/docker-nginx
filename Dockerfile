@@ -41,5 +41,5 @@ RUN cp -r /etc/nginx/* /defaults && \
 	sed -i 's/\/usr\/share\/nginx\/html/\/app/g' /defaults/conf.d/default.conf && \
 	sed -i 's/\/etc\/nginx/\/config/g' /defaults/nginx.conf && \
 	sed -i 's/\/var\/run/\/tmp/g' /defaults/nginx.conf && \
-    sed -i 's/\s*#error_page  404.*/    error_page 404 =200 index.html index.htm/' /defaults/conf.d/default.conf
+    sed -i 's/\s*#error_page  404.*/    error_page 404 =200 index.html index.htm;/' /defaults/conf.d/default.conf
 
