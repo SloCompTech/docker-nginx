@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv sh
+
+#
+#	Handle service failiure
+#
+
+if [ "$FAIL_MODE" == "hard" ]; then
+	exec s6-svscanctl -t /var/run/s6/services
+fi
+
