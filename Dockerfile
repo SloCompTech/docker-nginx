@@ -31,8 +31,12 @@ LABEL maintainer="martin.dagarin@gmail.com" \
 #
 # Move nginx webroot into /app
 # Move config into /config
+# @see https://www.linuxtopia.org/online_books/linux_tool_guides/the_sed_faq/sedfaq4_004.html
 #
-RUN cp -r /etc/nginx/* /defaults
+RUN cp -r /etc/nginx/conf.d /etc/nginx/nginx.conf /defaults && \
+		sed -i 's/\/etc\/nginx\/conf\.d\/\*\.conf/\/config\/conf\.d\/\*\.conf/' /defaults/nginx.conf && \
+		sed -i '1,/\/usr\/share\/nginx\/html/s//\/app/1' /defaults/conf.d/default.conf && \
+		sed -i 's/index  index\.html index\.htm\;/try_files $uri $uri\/ \/index\.html \/index\.htm \=404;/' /defaults/conf.d/default.conf
 
 #
 #	Add local files to image
